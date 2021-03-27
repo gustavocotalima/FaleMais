@@ -75,7 +75,7 @@ export function CallSimulator() {
                 if (callTime<planDiscount)
                     setCallValueWithFaleMais(0)
                 else
-                    setCallValueWithFaleMais(callValue.value*(callTime-planDiscount));
+                    setCallValueWithFaleMais((callValue.value*1.1)*(callTime-planDiscount));
             }
         });
         
