@@ -5,10 +5,11 @@ export const GlobalStyle = createGlobalStyle`
         --background: #FEFEFE;
         --orange: #EB8526;
         --card-background: #EFEFEF;
-        --input-background: #DEDEDE;
-        --text: #000000;
+        --result-background: #DEDEDE;
+        --input-border: #D7D7D7;
+        --input-text: #757575;
+        --text-gray: #FEFEFE;
         --text-button: #FEFEFE;
-        --logo: #FEFEFE
     }
     
     * {
@@ -32,37 +33,14 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
 
-    input {
+    input, p, label {
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
     }
 
-    body, textarea {
+    body, textarea, h1, button {
         font-family: 'Roboto', sans-serif;
         font-weight: 500;
-    }
-
-    h1, button {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-    }
-
-    button {
-        cursor: pointer;
-
-        font-size: 1rem;
-        color: var (--text-button);
-        background: var (--orange);
-        border: 0;
-        padding: 0 2rem;
-        border-radius: 0.25rem;
-        height: 2.5rem;
-
-        transition: filter 0.2s;
-        
-        &:hover {
-            filter: brightness(0.9);
-        }
     }
 
     [disabled] {
