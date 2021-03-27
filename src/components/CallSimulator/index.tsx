@@ -1,6 +1,5 @@
 import  { useContext, useEffect, useState } from 'react';
 import { PlansContext } from '../../PlansContext';
-import { Plans } from '../Plans';
 import { DDDsContainer, Container, Simulator, PlanContainer, Button , TimeRange, ResultContainer} from './styles';
 
 interface DDD {

@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { withStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
 
 export const Container = styled.div`
@@ -85,34 +84,18 @@ export const PlanContainer = styled.div`
     }
 `
 
-export const TimeRange = withStyles({
-    root: {
-      color: '#EB8526',
-      height: 8,
-    },
-    thumb: {
-      height: 16,
-      width: 16,
-      backgroundColor: '#EB8526',
-      marginTop: -4,
-      marginLeft: -8,
-      '&:focus, &:hover, &$active': {
-        boxShadow: 'inherit',
-      },
-    },
-    active: {},
-    valueLabel: {
-      left: 'calc(-50%)',
-    },
-    track: {
-      height: 8,
-      borderRadius: 4,
-    },
-    rail: {
-      height: 8,
-      borderRadius: 4,
-    },
-  })(Slider);
+export const TimeRange = styled(Slider)`
+    &>.MuiSlider-track, .MuiSlider-rail {
+        color: #EB8526;
+        height: 4px;
+        border-radius: 1rem;
+    }
+    &>.MuiSlider-thumb {
+        color: #EB8526;
+        height: 14px;
+        width: 14px;
+    }
+`
 
 export const ResultContainer = styled.div`
         max-width: 600px;
