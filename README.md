@@ -1,4 +1,4 @@
-# Telzin - Fale Mais
+# Telzir - Fale Mais
 
 # Para executar a aplicação:
 
