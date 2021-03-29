@@ -10,7 +10,7 @@ export function Plans(){
     return(
         <Container>
             <h1>Confira os planos</h1>
-            <Carousel>
+            <Carousel data-testid="PlansContainer">
 
                 {plans.map(plan => (
                     <PlanCard key={plan.id} description={plan.description} logo={plan.logo} name={plan.name}/>

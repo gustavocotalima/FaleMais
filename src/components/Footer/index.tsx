@@ -4,7 +4,7 @@ import logo from '../../assets/logo.svg';
 export function Footer(){
     return(
         <Container>
-            <a href="/"><img src={logo} alt="Tilzer" /></a>
+            <a href="/"><img src={logo} alt="Tilzer" data-testid="TilzerLogo"/></a>
             <p>Copyright 2021 © Telzir S.A</p>
         </Container>
     )

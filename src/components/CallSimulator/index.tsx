@@ -1,6 +1,6 @@
 import  { useContext, useEffect, useState } from 'react';
 import { PlansContext } from '../../PlansContext';
-import { DDDsContainer, Container, Simulator, PlanContainer, Button , TimeRange, ResultContainer} from './styles';
+import { DDDsContainer, Container, Simulator, PlansContainer, Button , TimeRange, ResultContainer} from './styles';
 
 interface DDD {
     id: number;
@@ -15,7 +15,6 @@ interface CallValue {
 }
 
 export function CallSimulator() {
-    
     const [DDDs, setDDDs] = useState<DDD[]>([]);
     const [callValues, setCallValues] = useState<CallValue[]>([]);
     const plans = useContext(PlansContext);
@@ -87,7 +86,7 @@ export function CallSimulator() {
             <Simulator>
                 <form>
                     <label>DDD Origem</label>
-                    <DDDsContainer>
+                    <DDDsContainer data-testid="OriginDDDs">
                         {DDDs.map(DDD=>(
                             <Button 
                             type="button" 
@@ -100,7 +99,7 @@ export function CallSimulator() {
                     </DDDsContainer>
 
                     <label>DDD Destino</label>
-                    <DDDsContainer>
+                    <DDDsContainer data-testid="DestinationDDDs">
                         {DDDs.map(DDD=>(
                             <Button 
                             type="button" 
@@ -115,7 +114,7 @@ export function CallSimulator() {
 
 
                     <label>Plano</label>
-                    <PlanContainer>
+                    <PlansContainer data-testid="Plans">
                         {plans.map(p => (
                         <Button 
                         type="button" 
@@ -125,17 +124,17 @@ export function CallSimulator() {
                             <img src={p.logo} alt={p.name}></img>
                         </Button>
                         ))}
-                    </PlanContainer>
+                    </PlansContainer>
 
                     <label>Tempo (Minutos)</label>
-                    <TimeRange
+                    <TimeRange data-testid="CallTime"
                     min={0}
                     max={400}
                     value={callTime}
                     valueLabelDisplay="auto"
                     onChange={handleChangeCallTime}
                     />
-                    <Button 
+                    <Button data-testid="CalcButton"
                         type="button" 
                         disabled={(originDDD!==0)&&(destinationDDD!==0)&&(plan!==0)&&(callTime!==0)?false:true}
                         onClick={calcSimulation}>Calcular
@@ -146,7 +145,7 @@ export function CallSimulator() {
                         <header>
                             <p>Custo de ligação padrão</p>
                         </header>
-                        <h1 className="red">
+                        <h1 className="red" data-testid="DefaultPlanCallCost">
                         {new Intl.NumberFormat('pt-BR', {
                             style:'currency',
                             currency: 'BRL'}
@@ -157,7 +156,7 @@ export function CallSimulator() {
                         <header>
                             <p>Custo de ligação com FaleMais</p>
                         </header>
-                        <h1 className="green"> 
+                        <h1 className="green" data-testid="FaleMaisCallCost"> 
                         {new Intl.NumberFormat('pt-BR', {
                             style:'currency',
                             currency: 'BRL'}

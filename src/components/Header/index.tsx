@@ -6,8 +6,8 @@ export function Header() {
     return (
         <Container>
             <Content>
-                <a href="/"><img src={logo} alt="Tilzer" /></a>
-                <img src={logoFaleMais} alt="FaleMais" />
+                <a href="/"><img src={logo} alt="Tilzer" data-testid="TilzerLogo"/></a>
+                <img src={logoFaleMais} alt="FaleMais" data-testid="FaleMaisLogo"/>
             </Content>
         </Container>
     )

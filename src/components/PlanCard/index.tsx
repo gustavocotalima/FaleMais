@@ -16,7 +16,7 @@ export function PlanCard({description, logo, name}: PlanProps){
                 <img src={logo} alt={name}></img>
             </div>
             <div>
-                <button type="submit">Confira</button>
+                <button type="submit" data-testid="PlanCardButton">Confira</button>
             </div>
             
         </Container>

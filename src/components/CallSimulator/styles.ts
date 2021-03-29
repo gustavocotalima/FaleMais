@@ -68,7 +68,7 @@ export const DDDsContainer = styled.div`
     }
 `
 
-export const PlanContainer = styled.div`
+export const PlansContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0.5rem;
