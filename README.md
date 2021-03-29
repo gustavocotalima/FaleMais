@@ -1,5 +1,9 @@
 # Telzir - Fale Mais
 
+# Primeiro execute:
+
+### `yarn install`
+
 # Para executar a aplicação:
 
 ### `yarn start`
